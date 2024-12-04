@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import LandingPage from './pages/LandingPage'
+import './App.css'
+import { Routes,Route } from 'react-router-dom'
+// import ItemsDisplay from './swiggy/components/ItemsDisplay'
+import ProductMenu from './swiggy/components/ProductMenu'
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/products/:firmId/:firmName" element={<ProductMenu />} />
+      </Routes>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
